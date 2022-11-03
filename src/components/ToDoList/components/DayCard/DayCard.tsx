@@ -11,11 +11,11 @@ import {
   CardTitleWrapper,
 } from "./styles";
 import { Collapse } from "@mui/material";
-import { ToDoTitle } from "../../styles";
+import { ToDoTitle } from "../../../../styles";
 import { ToDoCard } from "../ToDoCard";
-import { ITodoMock } from "../../types";
-import { ToDoIndicator } from "../../ReusableComponents/ToDoIndicator";
-import { INDICATOR_COLOR_DEFAULT } from "../../constants";
+import { ITodoMock } from "../../../../types";
+import { ToDoIndicator } from "../../../ReusableComponents/ToDoIndicator";
+import { INDICATOR_COLOR_DEFAULT } from "../../../../constants";
 
 interface IDayCard {
   todoMock: ITodoMock;

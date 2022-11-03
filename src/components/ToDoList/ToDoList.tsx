@@ -1,6 +1,6 @@
 import React from "react";
 import { IconButton } from "@mui/material";
-import { DayCard } from "../DayCard";
+import { DayCard } from "./components/DayCard";
 import { todosMock } from "../mock";
 import {
   ToDoListContainer,
@@ -9,12 +9,16 @@ import {
   SettingsIcon,
 } from "./styles";
 
-export const ToDoList = () => {
+interface IToDoList {
+  handleShowNewsFeed: () => void;
+}
+
+export const ToDoList: React.FC<IToDoList> = ({ handleShowNewsFeed }) => {
   return (
     <ToDoListContainer>
       <ToDoListContainerTitle>
         <ToDoListTitle>To Do</ToDoListTitle>
-        <IconButton>
+        <IconButton onClick={handleShowNewsFeed}>
           <SettingsIcon fontSize="large" />
         </IconButton>
       </ToDoListContainerTitle>

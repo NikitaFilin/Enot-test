@@ -1,10 +1,10 @@
 import React from "react";
-import { ToDoTitle } from "../../styles";
+import { ToDoTitle } from "../../../../styles";
 import { Card, CardContent, CardContentTitle, ToDoDescription } from "./styles";
 import { Switch } from "@mui/material";
-import { Todo } from "../../types";
-import { ToDoIndicator } from "../../ReusableComponents/ToDoIndicator";
-import { INDICATOR_COLOR_YELLOW } from "../../constants";
+import { Todo } from "../../../../types";
+import { ToDoIndicator } from "../../../ReusableComponents/ToDoIndicator";
+import { INDICATOR_COLOR_YELLOW } from "../../../../constants";
 
 interface ITodoCard {
   todo: Todo;

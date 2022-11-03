@@ -1,3 +1,5 @@
+export const NEWS_HEIGHT = "30px";
+
 export const CONTAINER_COLOR_BACKGROUND = "#222222";
 export const CARD_COLOR_BACKGROUND = "#282828";
 export const CARD_COLOR_TEXT = "#F4F4F4";

@@ -9,9 +9,12 @@ export const Container = styled.div({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
+  justifyContent: "space-between",
 
   color: CARD_COLOR_TEXT,
   backgroundColor: CONTAINER_COLOR_BACKGROUND,
+
+  overflowX: "hidden",
 });
 
 export const ToDoTitle = styled(Typography)({

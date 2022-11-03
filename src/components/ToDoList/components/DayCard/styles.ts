@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 import IconButton from "@mui/material/IconButton";
-import { CARD_COLOR_BACKGROUND, CARD_COLOR_TEXT } from "../../constants";
+import { CARD_COLOR_BACKGROUND, CARD_COLOR_TEXT } from "../../../../constants";
 
 export const Card = styled.div({
   width: "350px",
