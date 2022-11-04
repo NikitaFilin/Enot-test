@@ -30,7 +30,7 @@ export const ToDoList: React.FC<IToDoList> = ({
         <ToDoListContainerTitle>
           <ToDoListTitle>To Do</ToDoListTitle>
           <IconButton onClick={handleDialogState}>
-            <SettingsIcon fontSize="large" />
+            <SettingsIcon fontSize="large" $isActive={isShowNews} />
           </IconButton>
         </ToDoListContainerTitle>
         {todosMock.map((todoMock, i) => (
