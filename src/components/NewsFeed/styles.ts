@@ -1,9 +1,8 @@
 import styled from "@emotion/styled";
-import { NEWS_HEIGHT } from "../../constants";
 
 export const NewsFeedContainer = styled.div({
   width: "100%",
-  height: NEWS_HEIGHT,
+  height: "30px",
 
   animation: "animMarqueeRtl 30s linear infinite",
 });

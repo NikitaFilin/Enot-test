@@ -10,11 +10,11 @@ import {
   ToDoCardContainer,
   CardTitleWrapper,
 } from "./styles";
-import { Collapse } from "@mui/material";
+import { Box, Collapse } from "@mui/material";
 import { ToDoTitle } from "../../../../styles";
 import { ToDoCard } from "../ToDoCard";
 import { ITodoMock } from "../../../../types";
-import { ToDoIndicator } from "../../../ReusableComponents/ToDoIndicator";
+import { ToDoIndicator } from "../../../ReusableComponents";
 import { INDICATOR_COLOR_DEFAULT } from "../../../../constants";
 
 interface IDayCard {
@@ -40,13 +40,15 @@ export const DayCard: React.FC<IDayCard> = ({ todoMock }) => {
           </ExpandButton>
         </CardContent>
       </Card>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <ToDoCardContainer>
-          {todoMock.todos.map((todo) => (
-            <ToDoCard todo={todo} />
-          ))}
-        </ToDoCardContainer>
-      </Collapse>
+      <Box>
+        <Collapse in={expanded} timeout="auto" unmountOnExit>
+          <ToDoCardContainer>
+            {todoMock.todos.map((todo) => (
+              <ToDoCard todo={todo} />
+            ))}
+          </ToDoCardContainer>
+        </Collapse>
+      </Box>
     </>
   );
 };

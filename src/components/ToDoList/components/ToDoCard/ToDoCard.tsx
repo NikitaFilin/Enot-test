@@ -3,7 +3,7 @@ import { ToDoTitle } from "../../../../styles";
 import { Card, CardContent, CardContentTitle, ToDoDescription } from "./styles";
 import { Switch } from "@mui/material";
 import { Todo } from "../../../../types";
-import { ToDoIndicator } from "../../../ReusableComponents/ToDoIndicator";
+import { ToDoIndicator } from "../../../ReusableComponents";
 import { INDICATOR_COLOR_YELLOW } from "../../../../constants";
 
 interface ITodoCard {

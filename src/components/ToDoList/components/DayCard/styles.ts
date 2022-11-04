@@ -44,6 +44,7 @@ export const ExpandButton = styled(IconButton)({
 });
 
 export const ToDoCardContainer = styled.div({
+  // minHeight: "200px",
   width: "350px",
 
   padding: "8px 0px",

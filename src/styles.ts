@@ -3,13 +3,12 @@ import styled from "@emotion/styled";
 import { CONTAINER_COLOR_BACKGROUND, CARD_COLOR_TEXT } from "./constants";
 
 export const Container = styled.div({
-  minHeight: "100vh",
+  height: "100vh",
   width: "100%",
 
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  justifyContent: "space-between",
 
   color: CARD_COLOR_TEXT,
   backgroundColor: CONTAINER_COLOR_BACKGROUND,
