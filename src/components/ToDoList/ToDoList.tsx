@@ -33,8 +33,8 @@ export const ToDoList: React.FC<IToDoList> = ({
             <SettingsIcon fontSize="large" />
           </IconButton>
         </ToDoListContainerTitle>
-        {todosMock.map((todoMock) => (
-          <DayCard todoMock={todoMock} />
+        {todosMock.map((todoMock, i) => (
+          <DayCard key={i} todoMock={todoMock} /> // ключ - id с бэка
         ))}
       </ToDoListContainer>
       <Dialog
