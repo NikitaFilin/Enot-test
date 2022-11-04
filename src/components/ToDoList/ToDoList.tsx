@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { IconButton, Switch, Typography } from "@mui/material";
 import { DayCard } from "./components/DayCard";
-import { todosMock } from "../mock";
 import {
   ToDoListContainer,
   ToDoListContainerTitle,
@@ -10,20 +9,20 @@ import {
   DialogSwitchContainer,
 } from "./styles";
 import { Dialog } from "../ReusableComponents";
+import AppContext from "../../context/context";
 
 interface IToDoList {
   isShowNews: boolean;
-  isDialogOpen: boolean;
   handleDialogState: () => void;
   handleShowNewsFeed: () => void;
 }
 
 export const ToDoList: React.FC<IToDoList> = ({
   isShowNews,
-  isDialogOpen,
   handleDialogState,
   handleShowNewsFeed,
 }) => {
+  const { todos } = useContext(AppContext);
   return (
     <>
       <ToDoListContainer>
@@ -33,17 +32,16 @@ export const ToDoList: React.FC<IToDoList> = ({
             <SettingsIcon fontSize="large" $isActive={isShowNews} />
           </IconButton>
         </ToDoListContainerTitle>
-        {todosMock.map((todoMock, i) => (
-          <DayCard key={i} todoMock={todoMock} /> // ключ - id с бэка
+        {todos.map((todoMock) => (
+          <DayCard key={todoMock.id} todoMock={todoMock} />
         ))}
       </ToDoListContainer>
       <Dialog
-        isDialogOpen={isDialogOpen}
         handleDialogState={handleDialogState}
         title="Настройка новостной строки"
       >
         <DialogSwitchContainer>
-          <Switch onChange={handleShowNewsFeed} />
+          <Switch checked={isShowNews} onChange={handleShowNewsFeed} />
           <Typography>{isShowNews ? "Включена" : "Отключена"}</Typography>
         </DialogSwitchContainer>
       </Dialog>

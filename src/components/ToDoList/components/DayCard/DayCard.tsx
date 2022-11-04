@@ -44,7 +44,12 @@ export const DayCard: React.FC<IDayCard> = ({ todoMock }) => {
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <ToDoCardContainer>
             {todoMock.todos.map((todo, i) => (
-              <ToDoCard key={i} todo={todo} /> // ключ - id с бэка
+              <ToDoCard
+                key={todo.id}
+                todoDayId={todoMock.id}
+                todo={todo}
+                index={i}
+              />
             ))}
           </ToDoCardContainer>
         </Collapse>

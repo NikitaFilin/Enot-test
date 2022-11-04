@@ -2,8 +2,8 @@ import styled from "@emotion/styled";
 import {
   CARD_COLOR_BACKGROUND,
   CARD_COLOR_TEXT,
+  INDICATOR_COLOR_BLUE,
   INDICATOR_COLOR_DEFAULT,
-  INDICATOR_COLOR_YELLOW,
 } from "../../constants";
 
 import { Settings } from "@mui/icons-material";
@@ -53,7 +53,7 @@ export const ToDoListTitle = styled(Typography)({
 
 export const SettingsIcon = styled(Settings)<{ $isActive: boolean }>(
   ({ $isActive }) => ({
-    color: $isActive ? INDICATOR_COLOR_YELLOW : CARD_COLOR_TEXT,
+    color: $isActive ? INDICATOR_COLOR_BLUE : CARD_COLOR_TEXT,
   })
 );
 
