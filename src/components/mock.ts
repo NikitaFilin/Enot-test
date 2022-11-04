@@ -69,4 +69,27 @@ export const todosMock = [
       },
     ],
   },
+  {
+    date: "10/07 Tasks",
+    todos: [
+      {
+        title: "Fix Dad's IPad",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+        isDone: false,
+      },
+      {
+        title: "Goceries For Dinner",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+        isDone: false,
+      },
+      {
+        title: "Visit Erik",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+        isDone: false,
+      },
+    ],
+  },
 ];

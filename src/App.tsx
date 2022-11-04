@@ -8,13 +8,20 @@ function App() {
   const news =
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere abadipisci delectus molestias vero consequatur iusto ex iure oditveritatis reprehenderit eos sunt, nisi eveniet natus vel facilis illout.";
 
-  const [showNews, setShowNews] = useState(false);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [isShowNews, setIsShowNews] = useState(false);
 
-  const handleShowNewsFeed = () => setShowNews(!showNews);
+  const handleDialogState = () => setIsDialogOpen(!isDialogOpen);
+  const handleShowNewsFeed = () => setIsShowNews(!isShowNews);
   return (
     <Container>
-      <ToDoList handleShowNewsFeed={handleShowNewsFeed} />
-      {showNews ? <NewsFeed news={news} /> : null}
+      <ToDoList
+        isShowNews={isShowNews}
+        handleShowNewsFeed={handleShowNewsFeed}
+        isDialogOpen={isDialogOpen}
+        handleDialogState={handleDialogState}
+      />
+      {isShowNews ? <NewsFeed news={news} /> : null}
     </Container>
   );
 }

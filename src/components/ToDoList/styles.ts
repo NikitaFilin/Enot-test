@@ -53,3 +53,8 @@ export const ToDoListTitle = styled(Typography)({
 export const SettingsIcon = styled(Settings)({
   color: CARD_COLOR_TEXT,
 });
+
+export const DialogSwitchContainer = styled.div({
+  display: "flex",
+  alignItems: "center",
+});

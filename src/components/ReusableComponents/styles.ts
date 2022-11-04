@@ -9,3 +9,15 @@ export const Indicator = styled("div")<{ $color: string }>(({ $color }) => ({
   borderRadius: "3px",
   backgroundColor: `${$color}`,
 }));
+
+export const DialogContainer = styled.div({
+  minWidth: "400px",
+  minHeight: "100px",
+
+  padding: "8px",
+
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "space-evenly",
+});
