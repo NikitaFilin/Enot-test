@@ -20,7 +20,7 @@ export const ToDoCard: React.FC<ITodoCard> = ({ todo, todoDayId, index }) => {
       <CardContent>
         <ToDoIndicator color={INDICATOR_COLOR_YELLOW} index={index + 1} />
         <CardContentTitle>
-          <ToDoTitle>{todo.title}</ToDoTitle>
+          <ToDoTitle $isDone={todo.isDone}>{todo.title}</ToDoTitle>
           <ToDoDescription>{todo.description}</ToDoDescription>
         </CardContentTitle>
         <Switch

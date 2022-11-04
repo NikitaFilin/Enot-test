@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import {
   ExpandLess as ExpandLessIcon,
   ExpandMore as ExpandMoreIcon,
@@ -23,13 +23,19 @@ interface IDayCard {
 
 export const DayCard: React.FC<IDayCard> = ({ todoMock }) => {
   const [expanded, setExpanded] = useState(false);
+
+  const isDayTodosDone = useMemo(
+    () => todoMock.todos.every((todo) => todo.isDone),
+    [todoMock.todos]
+  );
+
   return (
     <>
       <Card>
         <CardContent>
           <CardTitleWrapper>
             <ToDoIndicator color={INDICATOR_COLOR_DEFAULT} />
-            <ToDoTitle>{todoMock.date}</ToDoTitle>
+            <ToDoTitle $isDone={isDayTodosDone}>{todoMock.date}</ToDoTitle>
           </CardTitleWrapper>
           <ExpandButton
             aria-label="expand"
