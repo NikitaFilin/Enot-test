@@ -18,15 +18,15 @@ import { ToDoIndicator } from "../../../ReusableComponents";
 import { INDICATOR_COLOR_DEFAULT } from "../../../../constants";
 
 interface IDayCard {
-  todoMock: ITodoMock;
+  dayTodo: ITodoMock;
 }
 
-export const DayCard: React.FC<IDayCard> = ({ todoMock }) => {
+export const DayCard: React.FC<IDayCard> = ({ dayTodo }) => {
   const [expanded, setExpanded] = useState(false);
 
   const isDayTodosDone = useMemo(
-    () => todoMock.todos.every((todo) => todo.isDone),
-    [todoMock.todos]
+    () => dayTodo.todos.every((todo) => todo.isDone),
+    [dayTodo.todos]
   );
 
   return (
@@ -35,7 +35,7 @@ export const DayCard: React.FC<IDayCard> = ({ todoMock }) => {
         <CardContent>
           <CardTitleWrapper>
             <ToDoIndicator color={INDICATOR_COLOR_DEFAULT} />
-            <ToDoTitle $isDone={isDayTodosDone}>{todoMock.date}</ToDoTitle>
+            <ToDoTitle $isDone={isDayTodosDone}>{dayTodo.date}</ToDoTitle>
           </CardTitleWrapper>
           <ExpandButton
             aria-label="expand"
@@ -49,10 +49,10 @@ export const DayCard: React.FC<IDayCard> = ({ todoMock }) => {
       <Box>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <ToDoCardContainer>
-            {todoMock.todos.map((todo, i) => (
+            {dayTodo.todos.map((todo, i) => (
               <ToDoCard
                 key={todo.id}
-                todoDayId={todoMock.id}
+                todoDayId={dayTodo.id}
                 todo={todo}
                 index={i}
               />

@@ -32,8 +32,8 @@ export const ToDoList: React.FC<IToDoList> = ({
             <SettingsIcon fontSize="large" $isActive={isShowNews} />
           </IconButton>
         </ToDoListContainerTitle>
-        {todos.map((todoMock) => (
-          <DayCard key={todoMock.id} todoMock={todoMock} />
+        {todos.map((dayTodo) => (
+          <DayCard key={dayTodo.id} dayTodo={dayTodo} />
         ))}
       </ToDoListContainer>
       <Dialog

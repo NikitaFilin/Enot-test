@@ -22,7 +22,7 @@ const getCardIndicatorColor = ($color: string, $index?: number) => {
   }
 };
 
-export const Indicator = styled("div")<{ $color: string; $cardIndex?: number }>(
+export const Indicator = styled.div<{ $color: string; $cardIndex?: number }>(
   ({ $color, $cardIndex }) => ({
     width: "5px",
     height: "40px",
