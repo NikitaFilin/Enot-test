@@ -16,10 +16,10 @@ export const Container = styled.div({
   overflowX: "hidden",
 });
 
-export const ToDoTitle = styled(Typography)<{ $isDone: boolean }>(
-  ({ $isDone }) => ({
-    fontWeight: 600,
-    fontSize: "24px",
-    textDecoration: $isDone ? "line-through" : "none",
-  })
-);
+export const ToDoTitle = styled(Typography, {
+  shouldForwardProp: (props) => props !== "$isDone",
+})<{ $isDone: boolean }>(({ $isDone }) => ({
+  fontWeight: 600,
+  fontSize: "24px",
+  textDecoration: $isDone ? "line-through" : "none",
+}));

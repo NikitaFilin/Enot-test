@@ -51,11 +51,11 @@ export const ToDoListTitle = styled(Typography)({
   fontSize: "48px",
 });
 
-export const SettingsIcon = styled(Settings)<{ $isActive: boolean }>(
-  ({ $isActive }) => ({
-    color: $isActive ? INDICATOR_COLOR_BLUE : CARD_COLOR_TEXT,
-  })
-);
+export const SettingsIcon = styled(Settings, {
+  shouldForwardProp: (props) => props !== "$isActive",
+})<{ $isActive: boolean }>(({ $isActive }) => ({
+  color: $isActive ? INDICATOR_COLOR_BLUE : CARD_COLOR_TEXT,
+}));
 
 export const DialogSwitchContainer = styled.div({
   display: "flex",
